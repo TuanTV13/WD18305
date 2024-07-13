@@ -25,8 +25,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('clients.index');
+})->name('home');
+Route::get('/shop', function () {
+    return view('clients.shop');
+})->name('shop');
+Route::get('/about', function () {
+    return view('clients.about');
+})->name('about');
 
 // Lab 1
 
@@ -137,6 +143,6 @@ Route::controller(NotifyController::class)
     ->prefix('notifies')
     ->group(function() {
         Route::get('/', 'index')->name('index');
-        Route::get('/{id}/show', 'show')->name('show');
+        Route::get('/{id}/show', 'show')->name('wshow');
         Route::get('/{id}/newbycategory', 'newByCategory')->name('newbycategory');
     });
