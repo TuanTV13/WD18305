@@ -13,10 +13,10 @@
                     <li class="dropdown"><a href="#"><span>Tin tức</span> <i
                                 class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            @foreach ($categories as $item)
+                            {{-- @foreach ($categories as $item)
                                 <li><a href="{{ route('notifies.newbycategory', ['id' => $item->id]) }}">{{ $item->name }}</a></li>
                                 
-                            @endforeach
+                            @endforeach --}}
                         </ul>
                     </li>
                     <li><a href="#contact">Contact</a></li>

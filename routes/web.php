@@ -59,18 +59,21 @@ Route::controller(NewController::class)
     });
 
 
-    // + 2 điểm asm 1
-
 
 Route::controller(ProductController::class)
     ->name('products.')
     ->prefix('products')
     ->group(function () {
-        Route::get('/', 'index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::get('/{id}/delete', 'delete')->name('delete');
-        Route::get('getTop10', 'getTop10')->name('getTop10');
-        Route::post('/store', 'store')->name('store');
+        Route::get('/', 'client')->name('client');
+        Route::get('/{id}/details', 'details')->name('details');
+        Route::get('/admin/', 'index')->name('index');
+        Route::get('/admin/create', 'create')->name('create');
+        Route::get('/admin/{id}/delete', 'delete')->name('delete');
+        Route::get('/admin/getTop10', 'getTop10')->name('getTop10');
+        Route::post('/admin/store', 'store')->name('store');
+        Route::get('/admin/{id}/edit', 'edit')->name('edit');
+        Route::put('/admin/{id}/update', 'update')->name('update');
+        Route::get('/admin/{id}/show', 'show')->name('show');
     });
 
 
